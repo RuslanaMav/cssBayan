@@ -15,15 +15,31 @@ body{
     cursor:pointer;
 }
 
-.memcontainer> .mem>label{
+.memcontainer> .mem>.labelcont>label{
     color: blue;
 }
-.memcontainer:hover > .mem>label{
+.memcontainer:hover > .mem>.labelcont>label{
     color: black;
 }
 
-.memcontainer> .mem>input:checked ~ label{
+.memcontainer> .mem>input:checked ~ .labelcont>label{
     color: black;
+}
+.memcontainer:hover > .mem:hover> .labelcont>.pcontent:before{
+    content:"\00D7"
+    }
+
+.memcontainer:hover > .mem> input:checked ~ .labelcont>.pcontent:before{
+content:"\00D7"
+}
+
+.memcontainer:hover > .mem>.labelcont>.pcontent:before{
+    content: "\002B";
+}
+
+
+.pcontent{
+    font-weight: bold;
 }
 
 /*добавить размер шрифта*/
@@ -34,7 +50,7 @@ h1{
     padding-bottom: 3%;
 }
 
-.mem>label{
+.mem>.labelcont>label{
     font-weight: bold;
     padding-bottom: 2%;
  
@@ -64,6 +80,11 @@ div:hover > img{
     display: block;
 } 
 
-
+.labelcont{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 1%;
+}
 
 
