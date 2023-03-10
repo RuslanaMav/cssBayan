@@ -1,4 +1,10 @@
+/* 
+Размеры шрифтов
+Изменить значок состония
+момент опускания мышки - для активного эффекта
+плавные переходы
 
+*/
 input{
     display: none;
 }
@@ -8,10 +14,15 @@ body{
     cursor: none;
 }
 
+
 .memcontainer{
     width: 50%;
     margin: auto;
     margin-top: 5%;
+    cursor:pointer;
+}
+
+label{
     cursor:pointer;
 }
 
@@ -25,15 +36,18 @@ body{
 .memcontainer> .mem>input:checked ~ .labelcont>label{
     color: black;
 }
-.memcontainer:hover > .mem:hover> .labelcont>.pcontent:before{
-    content:"\00D7"
+
+
+
+.memcontainer:hover > .mem:hover> .labelcont>label>.pcontent:before{
+    content:"\00D7";
     }
 
-.memcontainer:hover > .mem> input:checked ~ .labelcont>.pcontent:before{
-content:"\00D7"
+.memcontainer:hover > .mem> input:checked ~ .labelcont>label>.pcontent:before{
+    content:"\00D7"
 }
 
-.memcontainer:hover > .mem>.labelcont>.pcontent:before{
+.memcontainer:hover > .mem>.labelcont>label>.pcontent:before{
     content: "\002B";
 }
 
@@ -56,6 +70,8 @@ h1{
  
 }
 
+
+
 .mem{
 display: flex;
 flex-direction: column;
@@ -65,20 +81,25 @@ border-bottom: solid thin #dbdbdb;
 padding: 3% 0;
 }
 
+input:checked ~label>img {
+    transition: transform 4s;
+    display: block;
+}
+div:hover > label>img{
+    transition: transform 4s;
+    display: block;
+}
+
+.labelimg{
+    width: 100%;
+}
+
+
 img {
     display: none;
     background-color: white;
-    width: 50%;
-    align-self: center;
+    margin: auto;
 }
-
-input:checked ~ img{
-    display: block;
-}
-
-div:hover > img{
-    display: block;
-} 
 
 .labelcont{
     display: flex;
