@@ -1,8 +1,3 @@
-/* 
-цвет текста
-расстояние после текста до картинки
-
-*/
 
 input{
     display: none;
@@ -11,6 +6,7 @@ input{
 body{
     background-color:#FFFFE0;
     cursor: none;
+    
 }
 
 .memcontainer{
@@ -28,16 +24,13 @@ label{
     color:blue;
 }
 
-
-.memcontainer:hover > .mem>.labelcont>label,
 input:checked ~ .labelcont>label{
     color: black;
-}
-
+} 
 
 h1{
     font-weight: bold;
-    font-size: 170%;
+    font-size: 150%;
     border-bottom: solid thin #dbdbdb;
     margin:0;
     padding-bottom: 3%;
@@ -45,27 +38,27 @@ h1{
 
 .labelcont>label{
     font-weight: bold;
-    padding-bottom: 1%;
-    font-size: 150%;}
-
-.mem{
-display: flex;
-flex-direction: column;
-flex-wrap: wrap;
-height: auto;
-border-bottom: solid thin #dbdbdb;
-padding: 3% 0;
+    font-size: 120%;
+    
 }
 
-input:checked ~.labelimg>img {
+.mem{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: auto;
+    border-bottom: solid thin #dbdbdb;
+    padding: 3% 0;
+}
+
+input:checked ~.labelimg>img{
    visibility: visible;
-   width: 50%;
+   width: 75%;
    transition: 1s;
    opacity: 1;
 }
 
-input:checked ~label, 
-.mem:hover > label {
+input:checked ~label {
    height: auto;
    margin-top: 2%;
 }
@@ -74,60 +67,82 @@ input:checked ~label,
     visibility: hidden;
     opacity: 0;
     width: 0%;
-    padding-left:25%;
+    padding-left:12.5%;
 }
-
-
-  input:active ~ .labelimg>img{
-    opacity:0.5;
-  }
-
-  
-
 
 .labelimg{
     width: 100%;
     height: 0;
 }
 
-
-
 .labelcont{
     display: flex;
     justify-content: space-between;
+   
+   
 }
 
 .icon{
-   visibility: hidden;
+    visibility: hidden;
     width: 5%;
+    margin-right: 1%;
 }
 
 .icon>img{
     width: 100%;
+    
 }
 
-.memcontainer:hover>.mem> .labelcont>.icon,
-input:checked ~ .labelcont>.icon
-{
+input:checked ~ .labelcont>.icon{
     visibility: visible;
 }
 
-.mem:hover> .labelcont>.icon,
-input:checked ~ .labelcont>.icon
-{
+input:checked ~ .labelcont>.icon{
     transform: rotate(45deg);
     transition: 1s;
 }
 
 
 
-@media (max-width: 1920px) {
-    div:hover > .labelimg>img {
+@media (min-width:821px) {
+   .memcontainer:hover > .mem>.labelcont>label{
+        color: black;
+    } 
+    
+    div:hover > .labelimg>img{
         visibility: visible;
         width: 50%;
         transition: 1s;
         opacity: 1;
-     }
-
+    }
     
+    .mem:hover > label {
+        height: auto;
+        margin-top: 2%;
+    }
+    
+    .memcontainer:hover>.mem> .labelcont>.icon{
+        visibility: visible;
+    }
+    
+    .mem:hover> .labelcont>.icon{
+        transform: rotate(45deg);
+        transition: 1s;
+    }
+    
+    input:checked ~.labelimg>img{
+        width: 50%
+    }
+
+    .labelimg>img {
+        padding-left:25%;
+    }
+
+    input:active ~ .labelimg>img{
+        opacity:0.5;
+    }
+
+    .memcontainer:hover input:active ~ .labelcont>label{
+        color: blue;
+    }
 }
