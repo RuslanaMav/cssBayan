@@ -1,6 +1,7 @@
 /* 
-Изменить значок состония
-Мобильные версии разобраться
+цвет текста
+расстояние после текста до картинки
+
 */
 
 input{
@@ -15,7 +16,7 @@ body{
 .memcontainer{
     width: 50%;
     margin: auto;
-    margin-top: 5%;
+    margin-top: 3%;
     cursor:pointer;
 }
 
@@ -24,11 +25,12 @@ label{
 }
 
 .labelcont>label{
-    color: blue;
+    color:blue;
 }
 
+
 .memcontainer:hover > .mem>.labelcont>label,
-.memcontainer> .mem>input:checked ~ .labelcont>label{
+input:checked ~ .labelcont>label{
     color: black;
 }
 
@@ -41,11 +43,10 @@ h1{
     padding-bottom: 3%;
 }
 
-.mem>.labelcont>label{
+.labelcont>label{
     font-weight: bold;
-    padding-bottom: 2%;
-    font-size: 150%;
-}
+    padding-bottom: 1%;
+    font-size: 150%;}
 
 .mem{
 display: flex;
@@ -56,29 +57,33 @@ border-bottom: solid thin #dbdbdb;
 padding: 3% 0;
 }
 
-input:checked ~label>img, 
-div:hover > label>img {
+input:checked ~.labelimg>img {
    visibility: visible;
    width: 50%;
-   transition: 1s ;
+   transition: 1s;
    opacity: 1;
 }
 
 input:checked ~label, 
-div:hover > label{
-   height: 100%;
+.mem:hover > label {
+   height: auto;
+   margin-top: 2%;
 }
 
-img {
+.labelimg>img {
     visibility: hidden;
     opacity: 0;
     width: 0%;
     padding-left:25%;
 }
 
-input:active ~ .labelimg>img{
-    opacity:0.65;
+
+  input:active ~ .labelimg>img{
+    opacity:0.5;
   }
+
+  
+
 
 .labelimg{
     width: 100%;
@@ -87,16 +92,42 @@ input:active ~ .labelimg>img{
 
 
 
-
-
-
-
 .labelcont{
     display: flex;
     justify-content: space-between;
-    padding-right: 1%;
 }
 
-.pcontent{
-    font-weight: bold;
+.icon{
+   visibility: hidden;
+    width: 5%;
+}
+
+.icon>img{
+    width: 100%;
+}
+
+.memcontainer:hover>.mem> .labelcont>.icon,
+input:checked ~ .labelcont>.icon
+{
+    visibility: visible;
+}
+
+.mem:hover> .labelcont>.icon,
+input:checked ~ .labelcont>.icon
+{
+    transform: rotate(45deg);
+    transition: 1s;
+}
+
+
+
+@media (max-width: 1920px) {
+    div:hover > .labelimg>img {
+        visibility: visible;
+        width: 50%;
+        transition: 1s;
+        opacity: 1;
+     }
+
+    
 }
