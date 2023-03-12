@@ -13,12 +13,8 @@ body{
     width: 50%;
     margin: auto;
     margin-top: 3%;
-    cursor:pointer;
 }
 
-label{
-    cursor:pointer;
-}
 
 .labelcont>label{
     color:blue;
@@ -104,7 +100,7 @@ input:checked ~ .labelcont>.icon{
 
 
 
-@media (min-width:821px) {
+@media (hover:hover) {
    .memcontainer:hover > .mem>.labelcont>label{
         color: black;
     } 
@@ -144,5 +140,13 @@ input:checked ~ .labelcont>.icon{
 
     .memcontainer:hover input:active ~ .labelcont>label{
         color: blue;
+    }
+
+    .memcontainer{
+        cursor:pointer;
+    }
+    
+    label{
+        cursor:pointer;
     }
 }
