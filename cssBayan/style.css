@@ -22,6 +22,8 @@ label{
 
 .labelcont>label{
     color:blue;
+    display: flex;
+    align-items: center;
 }
 
 input:checked ~ .labelcont>label{
@@ -38,8 +40,7 @@ h1{
 
 .labelcont>label{
     font-weight: bold;
-    font-size: 120%;
-    
+    font-size: 120%;  
 }
 
 .mem{
@@ -50,6 +51,8 @@ h1{
     border-bottom: solid thin #dbdbdb;
     padding: 3% 0;
 }
+
+
 
 input:checked ~.labelimg>img{
    visibility: visible;
@@ -66,7 +69,6 @@ input:checked ~label {
 .labelimg>img {
     visibility: hidden;
     opacity: 0;
-    width: 0%;
     padding-left:12.5%;
 }
 
@@ -78,8 +80,6 @@ input:checked ~label {
 .labelcont{
     display: flex;
     justify-content: space-between;
-   
-   
 }
 
 .icon{
@@ -112,7 +112,7 @@ input:checked ~ .labelcont>.icon{
     div:hover > .labelimg>img{
         visibility: visible;
         width: 50%;
-        transition: 1s;
+        transition: 3s;
         opacity: 1;
     }
     
