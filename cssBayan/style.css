@@ -1,0 +1,151 @@
+
+input{
+    display: none;
+}
+
+body{
+    background-color:#FFFFE0;
+    
+}
+
+.memcontainer{
+    width: 50%;
+    margin: auto;
+    margin-top: 3%;
+}
+
+
+.labelcont>label{
+    color:blue;
+    display: flex;
+    align-items: center;
+}
+
+input:checked ~ .labelcont>label{
+    color: black;
+} 
+
+h1{
+    font-weight: bold;
+    font-size: 150%;
+    border-bottom: solid thin #dbdbdb;
+    margin:0;
+    padding-bottom: 3%;
+}
+
+.labelcont>label{
+    font-weight: bold;
+    font-size: 120%;  
+}
+
+.mem{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: auto;
+    border-bottom: solid thin #dbdbdb;
+    padding: 3% 0;
+}
+
+
+
+input:checked ~.labelimg>img{
+   visibility: visible;
+   width: 75%;
+   transition: 1s;
+   opacity: 1;
+}
+
+input:checked ~label {
+   height: auto;
+   margin-top: 2%;
+}
+
+.labelimg>img {
+    visibility: hidden;
+    opacity: 0;
+    padding-left:12.5%;
+}
+
+.labelimg{
+    width: 100%;
+    height: 0;
+}
+
+.labelcont{
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon{
+    visibility: hidden;
+    width: 5%;
+    margin-right: 1%;
+}
+
+.icon>img{
+    width: 100%;
+    
+}
+
+input:checked ~ .labelcont>.icon{
+    visibility: visible;
+}
+
+input:checked ~ .labelcont>.icon{
+    transform: rotate(45deg);
+    transition: 1s;
+}
+
+
+
+@media (hover:hover) {
+   .memcontainer:hover > .mem>.labelcont>label{
+        color: black;
+    } 
+    
+    div:hover > .labelimg>img{
+        visibility: visible;
+        width: 50%;
+        transition: 3s;
+        opacity: 1;
+    }
+    
+    .mem:hover > label {
+        height: auto;
+        margin-top: 2%;
+    }
+    
+    .memcontainer:hover>.mem> .labelcont>.icon{
+        visibility: visible;
+    }
+    
+    .mem:hover> .labelcont>.icon{
+        transform: rotate(45deg);
+        transition: 1s;
+    }
+    
+    input:checked ~.labelimg>img{
+        width: 50%
+    }
+
+    .labelimg>img {
+        padding-left:25%;
+    }
+
+    input:active ~ .labelimg>img{
+        opacity:0.5;
+    }
+
+    .memcontainer:hover input:active ~ .labelcont>label{
+        color: blue;
+    }
+
+    .memcontainer{
+        cursor:pointer;
+    }
+    
+    label{
+        cursor:pointer;
+    }
+}
